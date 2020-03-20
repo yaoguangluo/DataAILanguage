@@ -1,7 +1,7 @@
 package org.tinos.language.plorm;
 public class Select{
 
-	//	String plsql= "setRoot:C:/DetaDB;" + 
+//	String plsql= "setRoot:C:/DetaDB;" + 
 //			"baseName:ZYY;" + 
 //			"tableName:xybg:select;" +
 //			"condition:or:ID|<=|3000;";
