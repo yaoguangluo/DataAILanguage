@@ -1,5 +1,5 @@
 package org.tinos.language.plorm;
-public class Select{
+public class Delete{
 	String PLSQL= "";
 	public String startAtRootDir(String rootAddress) {
 		PLSQL= "setRoot:"+ rootAddress+ ";";
@@ -11,8 +11,9 @@ public class Select{
 		return PLSQL; 
 	}
 	
-	public String withTableSelect(String tableName) {
-		PLSQL+= "tableName:"+ tableName+ ":select;";
+	public String withTableDelete(String tableName) {
+		PLSQL= "tableName:"+ tableName+ ":delete;";
 		return PLSQL; 
 	}
+	
 }

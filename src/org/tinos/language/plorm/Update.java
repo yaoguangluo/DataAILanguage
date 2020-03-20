@@ -1,5 +1,5 @@
 package org.tinos.language.plorm;
-public class Select{
+public class Update{
 	String PLSQL= "";
 	public String startAtRootDir(String rootAddress) {
 		PLSQL= "setRoot:"+ rootAddress+ ";";
@@ -10,9 +10,9 @@ public class Select{
 		PLSQL+= "baseName:"+ baseName+ ";";
 		return PLSQL; 
 	}
-	
-	public String withTableSelect(String tableName) {
-		PLSQL+= "tableName:"+ tableName+ ":select;";
+
+	public String withTableUpdate(String tableName) {
+		PLSQL+= "tableName:"+ tableName+ ":update;";
 		return PLSQL; 
 	}
 }
