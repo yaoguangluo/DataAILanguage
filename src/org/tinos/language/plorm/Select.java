@@ -20,38 +20,39 @@ public class Select{
 //	   		"culumnName:uk:搭配:string;" + 
 //	   		"culumnName:uk:常见药:string;";
 //这个函数用于确定Deta PLSQL的Root like: 'c:/dsdsd' etc
-	public String startAtRootDir(String root) {
-		String PLSQL= "setRoot:"+ root+ ";";
+	String PLSQL= "";
+	public String startAtRootDir(String rootAddress) {
+		PLSQL= "setRoot:"+ rootAddress+ ";";
 		return PLSQL;
 	}
 	
-	public String withDataBase(String base) {
-		String PLSQL= "baseName:"+ base+ ";";
+	public String withBaseName(String baseName) {
+		PLSQL+= "baseName:"+ baseName+ ";";
 		return PLSQL; 
 	}
 	
-	public String withTableCreate(String table) {
-		String PLSQL= "tableName:"+ table+ ":create;";
+	public String withTableCreate(String tableName) {
+		PLSQL+= "tableName:"+ tableName+ ":create;";
 		return PLSQL; 
 	}
 	
-	public String withTableSelect(String table) {
-		String PLSQL= "tableName:"+ table+ ":select;";
+	public String withTableSelect(String tableName) {
+		PLSQL+= "tableName:"+ tableName+ ":select;";
 		return PLSQL; 
 	}
 	
-	public String withTableDelete(String table) {
-		String PLSQL= "tableName:"+ table+ ":delete;";
+	public String withTableDelete(String tableName) {
+		PLSQL= "tableName:"+ tableName+ ":delete;";
 		return PLSQL; 
 	}
 	
-	public String withTableUpdate(String table) {
-		String PLSQL= "tableName:"+ table+ ":update;";
+	public String withTableUpdate(String tableName) {
+		PLSQL+= "tableName:"+ tableName+ ":update;";
 		return PLSQL; 
 	}
 	
-	public String withTableInsert(String table) {
-		String PLSQL= "tableName:"+ table+ ":insert;";
+	public String withTableInsert(String tableName) {
+		PLSQL= "tableName:"+ tableName+ ":insert;";
 		return PLSQL; 
 	}
 }
