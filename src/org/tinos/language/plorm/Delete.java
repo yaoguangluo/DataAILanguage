@@ -12,7 +12,7 @@ public class Delete{
 	}
 	
 	public String withTableDelete(String tableName) {
-		PLSQL= "tableName:"+ tableName+ ":delete;";
+		PLSQL+= "tableName:"+ tableName+ ":delete;";
 		return PLSQL; 
 	}
 	

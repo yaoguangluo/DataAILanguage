@@ -37,7 +37,7 @@ public class Create{
 	}
 	
 	public String withCulumnName(String culumnName, String keyType, String dataFormat) {
-		PLSQL= "culumnName:"+ keyType+ ":"+ culumnName+ ":"+ dataFormat+ ";";
+		PLSQL+= "culumnName:"+ keyType+ ":"+ culumnName+ ":"+ dataFormat+ ";";
 		return PLSQL; 
 	}
 }

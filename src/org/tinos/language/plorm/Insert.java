@@ -12,7 +12,7 @@ public class Insert{
 	}
 		
 	public String withTableInsert(String tableName) {
-		PLSQL= "tableName:"+ tableName+ ":insert;";
+		PLSQL+= "tableName:"+ tableName+ ":insert;";
 		return PLSQL; 
 	}
 	
