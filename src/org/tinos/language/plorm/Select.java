@@ -19,7 +19,7 @@ public class Select{
 //	   		"culumnName:uk:愚按:string;" + 
 //	   		"culumnName:uk:搭配:string;" + 
 //	   		"culumnName:uk:常见药:string;";
-	//这个函数用于确定Deta PLSQL的Root like: 'c:/dsdsd' etc
+//这个函数用于确定Deta PLSQL的Root like: 'c:/dsdsd' etc
 	public String startAtRootDir(String root) {
 		String PLSQL= "setRoot:"+ root+ ";";
 		return PLSQL;
@@ -27,6 +27,31 @@ public class Select{
 	
 	public String withDataBase(String base) {
 		String PLSQL= "baseName:"+ base+ ";";
+		return PLSQL; 
+	}
+	
+	public String withTableCreate(String table) {
+		String PLSQL= "tableName:"+ table+ ":create;";
+		return PLSQL; 
+	}
+	
+	public String withTableSelect(String table) {
+		String PLSQL= "tableName:"+ table+ ":select;";
+		return PLSQL; 
+	}
+	
+	public String withTableDelete(String table) {
+		String PLSQL= "tableName:"+ table+ ":delete;";
+		return PLSQL; 
+	}
+	
+	public String withTableUpdate(String table) {
+		String PLSQL= "tableName:"+ table+ ":update;";
+		return PLSQL; 
+	}
+	
+	public String withTableInsert(String table) {
+		String PLSQL= "tableName:"+ table+ ":insert;";
 		return PLSQL; 
 	}
 }
