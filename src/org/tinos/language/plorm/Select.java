@@ -27,6 +27,7 @@ public class Select{
 		PLSQL+= ";"+ "tableName:"+ tableName+ ":select";
 		return this;
 	}
+	
 	//稍后我会把这个条件函数微分细化。
 	public Select withCondition(String conditionType) {
 		PLSQL+= ";"+ "condition:"+ conditionType;
@@ -94,8 +95,36 @@ public class Select{
 	}
 	
 	//稍后我会把这个条件函数微分细化。
-	public Select withRelation(String conditionType) {
-		PLSQL+= ";"+ "relation:"+ conditionType;
+	public Select withRelation(String relationType) {
+		PLSQL+= ";"+ "relation:"+ relationType;
+		return this;
+	}
+	
+//	
+//	getCulumns:u_id|as|detaId:u_email|as|detaEmail;
+//	join:backend:usrToken;
+//	condition:and:u_level|equal|low;
+//	getCulumns:u_id|as|sId:u_level:u_password|as|SSID;
+//	relation:and:detaId|==|sId;
+//	aggregation:limit:0|~|1;
+	
+	public Select as(String compareSet) {
+		PLSQL+= "|as|"+ compareSet;
+		return this;
+	}
+	
+	public Select upTo(String compareSet) {
+		PLSQL+= "|~|"+ compareSet;
+		return this;
+	}
+	
+	public Select withAggregation(String aggregationType) {
+		PLSQL+= ";"+ "aggregation:"+ aggregationType;
+		return this;
+	}
+	
+	public Select getCulumns() {
+		PLSQL+= ";"+ "getCulumns";
 		return this;
 	}
 }
