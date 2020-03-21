@@ -38,8 +38,53 @@ public class Select{
 		return this;
 	}
 
-	public Select lessAndEqualTo(String compareSet) {
+	public Select lessthanAndEqualTo(String compareSet) {
 		PLSQL+= "|<=|"+compareSet+";";
+		return this;
+	}
+	
+	public Select equalTo(String compareSet) {
+		PLSQL+= "|==|"+compareSet+";";
+		return this;
+	}
+	
+	public Select lessThan(String compareSet) {
+		PLSQL+= "|<|"+compareSet+";";
+		return this;
+	}
+	
+	public Select greatThan(String compareSet) {
+		PLSQL+= "|>|"+ compareSet+ ";";
+		return this;
+	}
+	
+	public Select greatThanAndEqualTo(String compareSet) {
+		PLSQL+= "|>=|"+ compareSet+ ";";
+		return this;
+	}
+	
+	public Select notEqualTo(String compareSet) {
+		PLSQL+= "|<>|"+ compareSet+ ";";
+		return this;
+	}
+	
+	public Select in(String compareSet) {
+		PLSQL+= "|in|"+ compareSet+ ";";
+		return this;
+	}
+	
+	public Select notIn(String compareSet) {
+		PLSQL+= "|!in|"+ compareSet+ ";";
+		return this;
+	}
+	
+	public Select sameStringWith(String compareSet) {
+		PLSQL+= "|equal|"+ compareSet+ ";";
+		return this;
+	}
+	
+	public Select notTheSameStringWith(String compareSet) {
+		PLSQL+= "|!equal|"+ compareSet+ ";";
 		return this;
 	}
 }
