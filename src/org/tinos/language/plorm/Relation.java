@@ -1,5 +1,5 @@
 package org.tinos.language.plorm;
-public class Aggregation{
+public class Relation{
 //	String PLSQL= "";
 //	public String getPLSQL() {
 //		return PLSQL;
