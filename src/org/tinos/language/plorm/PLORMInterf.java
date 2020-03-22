@@ -1,0 +1,33 @@
+package org.tinos.language.plorm;
+public interface PLORMInterf{
+	public String getPLSQL();
+	public void setPLSQL(String pLSQL);
+	public String withTableCreate(String tableName);
+	public String withTableDelete(String tableName);
+	public String withTableInsert(String tableName);
+	public String withTableUpdate(String tableName);
+	public PLORMInterf getCulumns() ;
+	public PLORMInterf startAtRootDir(String rootAddress);
+	public PLORMInterf withBaseName(String baseName);
+	public PLORMInterf withTableSelect (String tableName);
+	public PLORMInterf withCondition(String conditionType);
+	public PLORMInterf let(String leftSet);
+	public PLORMInterf lessThanAndEqualTo(String compareSet);
+	public PLORMInterf equalTo(String compareSet);
+	public PLORMInterf lessThan(String compareSet);
+	public PLORMInterf greatThan(String compareSet);
+	public PLORMInterf greatThanAndEqualTo(String compareSet);
+	public PLORMInterf notEqualTo(String compareSet) ;
+	public PLORMInterf in(String compareSet) ;
+	public PLORMInterf notIn(String compareSet) ;
+	public PLORMInterf equals(String compareSet);
+	public PLORMInterf notEquals(String compareSet);
+	public PLORMInterf innerJoinWithTable(String baseName, String tableName);
+	public PLORMInterf withRelation(String relationType) ;
+	public PLORMInterf as(String compareSet) ;
+	public PLORMInterf upTo(String compareSet);
+	public PLORMInterf withAggregation(String aggregationType);
+	public PLORMInterf changeCulumnName(String newCulumnName, String oldCulumnName);
+	public PLORMInterf withCulumnName(String culumnName, String dataType);
+	public PLORMInterf withCulumnValue(String culumnName, String culumnValue);
+}
