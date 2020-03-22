@@ -22,10 +22,30 @@ public class PLORM{
 		PLSQL+= ";"+ "baseName:"+ baseName;
 		return this;
 	}
-	
+	//
 	public PLORM withTableSelect (String tableName) {
-		PLSQL+= ";"+ "tableName:"+ tableName+ ":select ";
+		PLSQL+= ";"+ "tableName:"+ tableName+ ":select";
 		return this;
+	}
+
+	public String withTableCreate(String tableName) {
+		PLSQL+= ";"+ "tableName:"+ tableName+ ":create";
+		return PLSQL; 
+	}
+	
+	public String withTableDelete(String tableName) {
+		PLSQL+= ";"+ "tableName:"+ tableName+ ":delete";
+		return PLSQL; 
+	}
+	
+	public String withTableInsert(String tableName) {
+		PLSQL+= ";"+ "tableName:"+ tableName+ ":insert";
+		return PLSQL; 
+	}
+	
+	public String withTableUpdate(String tableName) {
+		PLSQL+= ";"+ "tableName:"+ tableName+ ":update";
+		return PLSQL; 
 	}
 	
 	//稍后我会把这个条件函数微分细化。
@@ -79,12 +99,12 @@ public class PLORM{
 		return this;
 	}
 	
-	public PLORM sameStringWith(String compareSet) {
+	public PLORM equals(String compareSet) {
 		PLSQL+= "|equal|"+ compareSet;
 		return this;
 	}
 	
-	public PLORM notTheSameStringWith(String compareSet) {
+	public PLORM notEquals(String compareSet) {
 		PLSQL+= "|!equal|"+ compareSet;
 		return this;
 	}
@@ -117,6 +137,21 @@ public class PLORM{
 	
 	public PLORM getCulumns() {
 		PLSQL+= ";"+ "getCulumns";
+		return this;
+	}
+	
+	public PLORM changeCulumnName(String newCulumnName, String oldCulumnName) {
+		PLSQL+= ";"+ "changeCulumnName:"+ newCulumnName+ ":"+ oldCulumnName;
+		return this;
+	}
+	
+	public PLORM withCulumnName(String culumnName, String dataType) {
+		PLSQL+= ";"+ "culumnName:"+ culumnName+ ":"+ dataType;
+		return this;
+	}
+	
+	public PLORM withCulumnValue(String culumnName, String culumnValue) {
+		PLSQL+= ";"+ "culumnValue:"+ culumnName+ ":"+ culumnValue;
 		return this;
 	}
 }
