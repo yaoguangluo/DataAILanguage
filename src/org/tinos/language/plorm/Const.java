@@ -29,6 +29,6 @@ public class Const{
 	public final static String CHANGES_CULUMN_NAME= "changeCulumnName";
 	public final static String CULUMN_NAME= "culumnName";
 	public final static String CULUMN_VALUE= "culumnValue";
-	public final static String SECTION_PARSER= ";";
-	public final static String SECTION_DOT= ":";
+	public final static String SEMICOLON= ";";
+	public final static String COLON= ":";
 }

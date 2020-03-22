@@ -10,60 +10,60 @@ public class PLORMImpl implements PLORMInterf{
 	}
 
 	public PLORMImpl startAtRootDir(String rootAddress) {
-		PLSQL= Const.SET_ROOT+ Const.SECTION_DOT+ rootAddress
-				+ Const.SECTION_PARSER;
+		PLSQL= Const.SET_ROOT+ Const.COLON+ rootAddress
+				+ Const.SEMICOLON;
 		return this;
 	}
 	
 	public PLORMImpl withBaseName(String baseName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.BASE_NAME+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.BASE_NAME+ Const.COLON
 				+ baseName;
 		return this;
 	}
 	//
 	public PLORMImpl withTableSelect (String tableName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.TABLE_NAME+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
-				+ Const.SECTION_DOT+ Const.SELECT;
+				+ Const.COLON+ Const.SELECT;
 		return this;
 	}
 
 	public String withTableCreate(String tableName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.TABLE_NAME+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
-				+ Const.SECTION_DOT+ Const.CREATE;
+				+ Const.COLON+ Const.CREATE;
 		return PLSQL; 
 	}
 	
 	public String withTableDelete(String tableName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.TABLE_NAME+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
-				+ Const.SECTION_DOT+ Const.DELETE;
+				+ Const.COLON+ Const.DELETE;
 		return PLSQL; 
 	}
 	
 	public String withTableInsert(String tableName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.TABLE_NAME+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
-				+ Const.SECTION_DOT+ Const.INSERT;
+				+ Const.COLON+ Const.INSERT;
 		return PLSQL; 
 	}
 	
 	public String withTableUpdate(String tableName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.TABLE_NAME+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
-				+ Const.SECTION_DOT+ Const.UPDATE;
+				+ Const.COLON+ Const.UPDATE;
 		return PLSQL; 
 	}
 	
 	public PLORMImpl withCondition(String conditionType) {
-		PLSQL+= Const.SECTION_PARSER+ Const.CONDITION+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.CONDITION+ Const.COLON
 				+ conditionType;
 		return this;
 	}
 
 	public PLORMImpl let(String leftSet) {
-		PLSQL+= Const.SECTION_DOT+ leftSet;
+		PLSQL+= Const.COLON+ leftSet;
 		return this;
 	}
 
@@ -118,13 +118,13 @@ public class PLORMImpl implements PLORMInterf{
 	}
 	
 	public PLORMImpl innerJoinWithTable(String baseName, String tableName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.JOIN+ Const.SECTION_DOT+ baseName
-				+ Const.SECTION_DOT+ tableName;
+		PLSQL+= Const.SEMICOLON+ Const.JOIN+ Const.COLON+ baseName
+				+ Const.COLON+ tableName;
 		return this;
 	}
 	
 	public PLORMImpl withRelation(String relationType) {
-		PLSQL+= Const.SECTION_PARSER+ Const.RELATION+ Const.SECTION_DOT
+		PLSQL+= Const.SEMICOLON+ Const.RELATION+ Const.COLON
 				+ relationType;
 		return this;
 	}
@@ -140,31 +140,31 @@ public class PLORMImpl implements PLORMInterf{
 	}
 	
 	public PLORMImpl withAggregation(String aggregationType) {
-		PLSQL+= Const.SECTION_PARSER+ Const.WITH_AGGREGATION
-				+ Const.SECTION_DOT+ aggregationType;
+		PLSQL+= Const.SEMICOLON+ Const.WITH_AGGREGATION
+				+ Const.COLON+ aggregationType;
 		return this;
 	}
 	
 	public PLORMImpl getCulumns() {
-		PLSQL+= Const.SECTION_PARSER+ Const.GET_CULUMNS;
+		PLSQL+= Const.SEMICOLON+ Const.GET_CULUMNS;
 		return this;
 	}
 	
 	public PLORMImpl changeCulumnName(String newCulumnName, String oldCulumnName) {
-		PLSQL+= Const.SECTION_PARSER+ Const.CHANGES_CULUMN_NAME+ Const.SECTION_DOT
-				+ newCulumnName+ Const.SECTION_DOT+ oldCulumnName;
+		PLSQL+= Const.SEMICOLON+ Const.CHANGES_CULUMN_NAME+ Const.COLON
+				+ newCulumnName+ Const.COLON+ oldCulumnName;
 		return this;
 	}
 	
 	public PLORMImpl withCulumnName(String culumnName, String dataType) {
-		PLSQL+= Const.SECTION_PARSER+ Const.CULUMN_NAME+ Const.SECTION_DOT+ culumnName
-				+ Const.SECTION_DOT+ dataType;
+		PLSQL+= Const.SEMICOLON+ Const.CULUMN_NAME+ Const.COLON+ culumnName
+				+ Const.COLON+ dataType;
 		return this;
 	}
 	
 	public PLORMImpl withCulumnValue(String culumnName, String culumnValue) {
-		PLSQL+= Const.SECTION_PARSER+ Const.CULUMN_VALUE+ Const.SECTION_DOT+ culumnName
-				+ Const.SECTION_DOT+ culumnValue;
+		PLSQL+= Const.SEMICOLON+ Const.CULUMN_VALUE+ Const.COLON+ culumnName
+				+ Const.COLON+ culumnValue;
 		return this;
 	}
 }
