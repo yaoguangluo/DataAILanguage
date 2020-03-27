@@ -1,4 +1,7 @@
 package org.tinos.language.plorm;
+
+import java.util.Map;
+
 public interface PLORMInterf{
 	public String getPLSQL();
 	public void setPLSQL(String pLSQL);
@@ -7,7 +10,7 @@ public interface PLORMInterf{
 	public PLORMInterf withTableInsert(String tableName);
 	public PLORMInterf withTableUpdate(String tableName);
 	public PLORMInterf withTableSelect(String tableName);
-	public PLORMInterf getCulumns() ;
+	public PLORMInterf getCulumns();
 	public PLORMInterf startAtRootDir(String rootAddress);
 	public PLORMInterf withBaseName(String baseName);
 	public PLORMInterf withCondition(String conditionType);
@@ -30,4 +33,8 @@ public interface PLORMInterf{
 	public PLORMInterf changeCulumnName(String newCulumnName, String oldCulumnName);
 	public PLORMInterf withCulumnName(String culumnName, String dataType);
 	public PLORMInterf withCulumnValue(String culumnName, String culumnValue);
+	public PLORMInterf checkErrors(String string);
+	public PLORMInterf fixErrors(String string);
+	public PLORMInterf finalExec(boolean b) throws Exception;
+	public Map<String, Object> returnAsMap();
 }

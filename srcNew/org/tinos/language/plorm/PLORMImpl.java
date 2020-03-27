@@ -1,6 +1,10 @@
 package org.tinos.language.plorm;
+import java.util.Map;
+
+import org.plsql.db.plsql.imp.ExecPLSQLImp;
 public class PLORMImpl implements PLORMInterf{
 	private String PLSQL= "";
+	private Map<String, Object> map;
 	public String getPLSQL() {
 		return PLSQL;
 	}
@@ -166,5 +170,34 @@ public class PLORMImpl implements PLORMInterf{
 		PLSQL+= Const.SEMICOLON+ Const.CULUMN_VALUE+ Const.COLON+ culumnName
 				+ Const.COLON+ culumnValue;
 		return this;
+	}
+
+	public PLORMInterf exec(boolean b) throws Exception {
+		map= ExecPLSQLImp.ExecPLORM(this, true);
+		return this;
+	}
+
+	@Override
+	public PLORMInterf checkErrors(String string) {
+		// TODO Auto-generated method stub
+		return this;
+	}
+
+	@Override
+	public PLORMInterf fixErrors(String string) {
+		// TODO Auto-generated method stub
+		return this;
+	}
+
+	@Override
+	public PLORMInterf finalExec(boolean b) throws Exception {
+		map= ExecPLSQLImp.ExecPLORM(this, true);
+		return this;
+	}
+
+	@Override
+	public Map<String, Object> returnAsMap() {
+		// TODO Auto-generated method stub
+		return this.map;
 	}
 }
