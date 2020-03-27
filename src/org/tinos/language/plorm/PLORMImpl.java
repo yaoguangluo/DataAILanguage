@@ -28,32 +28,32 @@ public class PLORMImpl implements PLORMInterf{
 		return this;
 	}
 
-	public String withTableCreate(String tableName) {
+	public PLORMImpl withTableCreate(String tableName) {
 		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
 				+ Const.COLON+ Const.CREATE;
-		return PLSQL; 
+		return this; 
 	}
 	
-	public String withTableDelete(String tableName) {
+	public PLORMImpl withTableDelete(String tableName) {
 		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
 				+ Const.COLON+ Const.DELETE;
-		return PLSQL; 
+		return this; 
 	}
 	
-	public String withTableInsert(String tableName) {
+	public PLORMImpl withTableInsert(String tableName) {
 		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
 				+ Const.COLON+ Const.INSERT;
-		return PLSQL; 
+		return this; 
 	}
 	
-	public String withTableUpdate(String tableName) {
+	public PLORMImpl withTableUpdate(String tableName) {
 		PLSQL+= Const.SEMICOLON+ Const.TABLE_NAME+ Const.COLON
 				+ tableName
 				+ Const.COLON+ Const.UPDATE;
-		return PLSQL; 
+		return this; 
 	}
 	
 	public PLORMImpl withCondition(String conditionType) {
