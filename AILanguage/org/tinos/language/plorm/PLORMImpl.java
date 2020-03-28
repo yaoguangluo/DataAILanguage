@@ -1,9 +1,9 @@
 package org.tinos.language.plorm;
 import java.util.Map;
-
 import org.plsql.db.plsql.imp.ExecPLSQLImp;
 public class PLORMImpl implements PLORMInterf{
 	private String PLSQL= "";
+	private String[] PLSQLArray;
 	private Map<String, Object> map;
 	public String getPLSQL() {
 		return PLSQL;
@@ -179,13 +179,11 @@ public class PLORMImpl implements PLORMInterf{
 
 	@Override
 	public PLORMInterf checkErrors(String string) {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
 	@Override
 	public PLORMInterf fixErrors(String string) {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
@@ -197,7 +195,44 @@ public class PLORMImpl implements PLORMInterf{
 
 	@Override
 	public Map<String, Object> returnAsMap() {
-		// TODO Auto-generated method stub
 		return this.map;
+	}
+
+	@Override
+	public PLORMInterf checkAndFixPlsqlGrammarErrors() {
+		//string to array
+		this.PLSQLArray= PLSQL.split(";");
+		//条件检查 1 过滤  2 修改 3 语义检测
+		//1 
+		for(int i= 1; i< PLSQLArray.length; i++) {
+			//1.1 过滤相同句型
+			//1.2 过滤无效字符
+			//1.3 过滤攻击代码
+			if(PLSQLArray[i].equalsIgnoreCase(PLSQLArray[i- 1])) {
+				PLSQLArray[i]= "";
+			}
+		}
+		//2
+		//2.1 修改错误比较符号
+		//2.2 修改错误语法关键字
+		//2.3 修改错误标注符号
+		
+		//3
+		//3.1 检测是否有关键字前后句段混乱
+		//3.2 检测是否有关键字 格式 倒置
+		//3.3 检测是否有关键字 句型 倒置
+		
+		//rerturn
+		String string= "";
+		for(int i= 0; i< PLSQLArray.length; i++) {
+			string+= PLSQLArray[i];
+		}
+		PLSQL= string;
+		return this;
+	}
+
+	@Override
+	public PLORMInterf checkAndFixSystemEnvironmentErrors() {
+		return this;
 	}
 }

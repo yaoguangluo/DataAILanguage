@@ -37,4 +37,6 @@ public interface PLORMInterf{
 	public PLORMInterf fixErrors(String string);
 	public PLORMInterf finalExec(boolean b) throws Exception;
 	public Map<String, Object> returnAsMap();
+	public PLORMInterf checkAndFixPlsqlGrammarErrors();
+	public PLORMInterf checkAndFixSystemEnvironmentErrors();
 }
