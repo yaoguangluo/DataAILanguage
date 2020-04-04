@@ -223,6 +223,7 @@ public class PLORMImpl implements PLORMInterf{
 		//3.3 检测是否有关键字 句型 倒置
 		
 		//rerturn
+		//之后会换成stringbuilder
 		String string= "";
 		for(int i= 0; i< PLSQLArray.length; i++) {
 			string+= PLSQLArray[i];
