@@ -211,6 +211,18 @@ public class PLORMImpl implements PLORMInterf{
 			if(PLSQLArray[i].equalsIgnoreCase(PLSQLArray[i- 1])) {
 				PLSQLArray[i]= "";
 			}
+			PLSQLArray[i]= PLSQLArray[i].replaceAll(">+", ">");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("<+", "<");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\!+", "!");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\~+", "~");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\@+", "@");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\&&+", "&&");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\|\\|+", "||");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\[+", "[");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\]+", "]");
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\:+", ":");
+			
+			PLSQLArray[i]= PLSQLArray[i].replaceAll("\\s+", "");
 		}
 		//2
 		//2.1 ÐÞ¸Ä´íÎó±È½Ï·ûºÅ
