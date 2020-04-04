@@ -234,6 +234,14 @@ public class PLORMImpl implements PLORMInterf{
 
 	@Override
 	public PLORMInterf checkAndFixSystemEnvironmentErrors() {
+		//1 检测操作系统版本型号
+		//2 检测虚拟机的型号
+		//3 检测内存可用空间
+		//4 检测cpu的处理速度
+		//5 检测cpu占用比
+		//6 检测系统已开机时间
+		//7 检测硬盘空间
+		//8 检测当前线程数
 		return this;
 	}
 }
